@@ -46,8 +46,10 @@ The following arguments are supported:
 * `name` - (Required) The name of the policy.
 * `autoscaling_group_name` - (Required) The name of the autoscaling group.
 * `adjustment_type` - (Optional) Specifies whether the adjustment is an absolute number or a percentage of the current capacity. Valid values are `ChangeInCapacity`, `ExactCapacity`, and `PercentChangeInCapacity`.
+* `min_adjustment_magnitude` - (Optional) The minimum absolute number capacity change when using "PercentChangeInCapacity" adjustment type. Without a value, AWS will default to 1.
 * `policy_type` - (Optional) The policy type, either "SimpleScaling", "StepScaling" or "TargetTrackingScaling". If this value isn't provided, AWS will default to "SimpleScaling."
 * `estimated_instance_warmup` - (Optional) The estimated time, in seconds, until a newly launched instance will contribute CloudWatch metrics. Without a value, AWS will default to the group's specified cooldown period.
+
 
 The following arguments are only available to "SimpleScaling" type policies:
 
